@@ -30,7 +30,8 @@ RSpec.describe User, type: :model do
         @user.password = 'aaaaaaa'
         @user.valid?
         expect(@user.errors.full_messages).to include("Password Include both letters and numbers")
-      endit 'password:半角英数混合(数字のみ)' do
+      end
+      it 'password:半角英数混合(数字のみ)' do
         @user.password = '1111111'
         @user.valid?
         expect(@user.errors.full_messages).to include("Password Include both letters and numbers")
